@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2019043",
+      "name": "工作经验",
+      "font_class": "gongzuojingyan",
+      "unicode": "e79c",
+      "unicode_decimal": 59292
+    },
+    {
+      "icon_id": "8039390",
+      "name": "地点",
+      "font_class": "didian",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "9626967",
+      "name": "学历",
+      "font_class": "xueli",
+      "unicode": "e886",
+      "unicode_decimal": 59526
+    },
+    {
+      "icon_id": "9627001",
+      "name": "资金",
+      "font_class": "zijin",
+      "unicode": "e88f",
+      "unicode_decimal": 59535
+    }
+  ]
+}
