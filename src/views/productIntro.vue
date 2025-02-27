@@ -81,7 +81,7 @@ const products = ref([
       ellipsis
       class="el-menu-popper-demo"
       mode="horizontal"
-      style="width: 3rem; --el-menu-hover-bg-color: white"
+      style="width: 600px; --el-menu-hover-bg-color: white"
       background-color="#fff"
       collapse-transition
       text-color="#000"
@@ -181,7 +181,7 @@ const products = ref([
   justify-content: space-evenly;
   border-bottom: 2px solid rgba(128, 128, 128, 0.5);
   position: fixed; /* 固定位置 */
-  top: 110px; /* 距离顶部0 */
+  top: 8vh; /* 距离顶部0 */
   left: 0; /* 距离左侧0 */
   right: 0; /* 距离右侧0 */
   z-index: 999; /* 确保它在最上面 */
@@ -189,7 +189,7 @@ const products = ref([
 }
 
 .el-menu--horizontal {
-  --el-menu-horizontal-height: 80px;
+  --el-menu-horizontal-height: 6vh;
   border-bottom: none;
 }
 
@@ -205,20 +205,17 @@ const products = ref([
   background-color: #fff !important;
 }
 
-.product-banner-first >>> .el-breadcrumb__inner:hover {
-  color: var(--maincolor);
-}
 .product-icon-and-breadcrumb {
   display: flex;
 }
 .product-icon-and-breadcrumb i {
-  width: 10px;
-  height: 10px;
-  line-height: 10px;
+  width: 0.5vw;
+  height: 0.5vw;
+  line-height: 1vh;
   display: inline-block;
   font-size: 30px;
   color: var(--maincolor);
-  margin-right: 30px;
+  margin-right: 1vw;
 }
 .product-container {
   display: flex;
@@ -239,32 +236,32 @@ const products = ref([
   text-align: left; /* 文本靠左对齐 */
 }
 .product-item-card img {
-  width: 500px;
+  width: 20vw;
   object-fit: cover; /* 确保图片覆盖整个容器 */
 }
 .product-item-card .title {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 50px;
+  margin-bottom: 2vh;
 }
 .product-item-card li {
   list-style-type: disc;
   font-size: 12px;
   font-weight: 300;
   color: var(--greyword);
-  margin-bottom: 10px;
+  margin-bottom: 1vh;
 }
 .product-item-card .subtitle {
   font-size: 20px;
   font-weight: 300;
-  margin: 30px 0px;
+  margin: 1.5vh 0;
 }
 .product-item-card .item-form-param {
   display: flex;
   border-bottom: 1px solid rgba(128, 128, 128, 0.5);
-  width: 400px;
+  width: 15vw;
 }
 .item-form-param p {
-  margin: 5px 100px 0px 0px; /* 在上下添加5像素的外边距 */
+  margin: 0.5vh 4vw 0px 0px; /* 在上下添加5像素的外边距 */
 }
 </style>

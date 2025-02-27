@@ -168,10 +168,10 @@ onMounted(() => {
 .joinus-item::before {
   content: ''; /* 伪元素内容为空 */
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%; /* 伪元素宽度为100% */
-  height: 3px; /* 伪元素高度为2px */
+  left: 1px;
+  bottom: -1px;
+  width: 99%; /* 伪元素宽度为100% */
+  height: 4px; /* 伪元素高度为2px */
   background-color: var(--maincolor); /* 伪元素背景颜色 */
   transform: scaleX(0); /* 初始化时不显示 */
   transform-origin: left; /* 变换原点在左边 */

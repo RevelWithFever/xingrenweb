@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-
+import { useDeviceStore } from '@/stores'
 const router = useRouter()
 const route = useRoute()
 
@@ -11,13 +11,15 @@ const defaultActive = computed(() => {
 const navigateToProduct = () => {
   router.push('/product')
 }
+
+const deviceStore = useDeviceStore()
 </script>
 
 <template>
   <div class="header">
     <div class="header-list">
       <div class="header-top">
-        <img src="@/assets/img/logo_large.png" class="logo" />
+        <img v-if="!deviceStore.isPhone" src="@/assets/img/logo_large.png" class="logo" />
         <el-menu
           :default-active="defaultActive"
           class="el-menu-nav"
@@ -65,7 +67,8 @@ const navigateToProduct = () => {
 <style scoped>
 /* 页面头部 */
 .header {
-  height: 110px;
+  width: 90vw;
+  height: 8vh;
 }
 /* 固定定位 */
 .header-list {
@@ -74,17 +77,17 @@ const navigateToProduct = () => {
   left: 0;
   z-index: 99;
   width: 100%;
-  height: 110px;
+  height: auto;
   background-color: #fff;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   background-color: #171602;
 }
 .header-top {
-  width: 6rem;
-  height: 110px;
+  width: 60vw;
+  height: auto;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .el-menu-nav {
@@ -93,11 +96,11 @@ const navigateToProduct = () => {
 }
 
 .logo {
-  width: 200px;
+  width: 8vw;
 }
 
 .el-menu--horizontal {
-  --el-menu-horizontal-height: 110px;
+  --el-menu-horizontal-height: 8vh;
   border-bottom: none;
 }
 .el-menu-item {

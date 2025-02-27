@@ -63,12 +63,12 @@ const currentYear = ref(new Date().getFullYear())
 
 <style scoped>
 .footer-container {
-  padding: 0.1rem;
+  padding: 20px;
   background-color: #000;
   color: #fff;
 }
 .footer-inner-list {
-  width: 9rem;
+  width: 1600px;
   display: flex;
   align-items: center; /* 水平居中 */
   justify-content: space-evenly;
@@ -76,7 +76,7 @@ const currentYear = ref(new Date().getFullYear())
 }
 
 .footer-container img {
-  width: 1rem; /* 使图片宽度适应容器 */
+  width: 250px; /* 使图片宽度适应容器 */
   height: auto; /* 保持图片的宽高比 */
 }
 .footer-right-top-l ul {

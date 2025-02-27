@@ -8,6 +8,7 @@ const router = createRouter({
     { path: '/product', component: () => import('@/views/productIntro.vue') },
     { path: '/apply', component: () => import('@/views/applyArea.vue') },
     { path: '/news', component: () => import('@/views/newsPage.vue') },
+    { path: '/newsDetail', component: () => import('@/views/newsDetail.vue') },
     { path: '/join', component: () => import('@/views/joinUs.vue') },
     { path: '/contact', component: () => import('@/views/contactUs.vue') },
     {
