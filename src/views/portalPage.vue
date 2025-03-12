@@ -33,7 +33,7 @@ onMounted(() => {
     // 需要挂载的动画元素
     animateClass: 'animated',
     // 偏移值（即偏移一定距离后再执行动画，推荐设置！）
-    offset: 100,
+    offset: 10,
     // 移动设备是否生效
     mobile: true,
     // 是否支持异步
@@ -54,10 +54,10 @@ const newsList = ref(newsData.slice(0, 5))
       </video>
     </div>
     <el-row :gutter="20" style="padding: 20px 0px; background-color: #171602" justify="center">
-      <el-col :span="5" class="about-left-container">
+      <el-col :span="5" :xs="22" class="about-left-container">
         <div class="about-left wow bounceInLeft">关于<b>星韧</b></div></el-col
       >
-      <el-col :span="10">
+      <el-col :span="10" :xs="22">
         <div class="about-right wow bounceInRight">
           <el-card
             style="max-width: 1200px; background-color: #171602; color: #fff; border-color: #f3aa3d"
@@ -81,41 +81,32 @@ const newsList = ref(newsData.slice(0, 5))
         <div class="about-bottom wow tada">
           <span>
             <i class="iconfont icon-zijin"></i>
-            <el-statistic
-              value-style="color:var(--maincolor);font-size:24px"
-              class="about-statistic"
-              :value="fundMoney"
-            >
+            <el-statistic class="about-statistic" :value="fundMoney">
               <template #title>
-                <div style="font-size: 24px; margin-top: 10px; color: #fff">注册资本</div>
+                <div class="statistic-title">注册资本</div>
               </template>
               <template #suffix><b style="color: var(--maincolor)"> ￥ </b></template>
             </el-statistic>
           </span>
           <span>
             <i class="iconfont icon-didian"></i>
-            <div style="font-size: 24px; margin-top: 3px; margin-bottom: 3px; color: #fff">
-              办公地点
-            </div>
-            <div style="color: var(--maincolor); font-size: 24px">上海</div>
+            <div class="statistic-title">办公地点</div>
+            <div class="statistic-content">上海</div>
           </span>
           <span>
             <i class="iconfont icon-xueli"></i>
-            <el-statistic
-              value-style="color:var(--maincolor);font-size:24px"
-              :value="ratioOfMaster"
-            >
+            <el-statistic :value="ratioOfMaster">
               <template #title>
-                <div style="font-size: 24px; margin-top: 10px; color: #fff">硕士以上</div>
+                <div class="statistic-title">硕士以上</div>
               </template>
               <template #suffix><b style="color: var(--maincolor)"> % </b></template>
             </el-statistic>
           </span>
           <span>
             <i class="iconfont icon-gongzuojingyan"></i>
-            <el-statistic :value="50" value-style="color:var(--maincolor);font-size:24px">
+            <el-statistic :value="50">
               <template #title>
-                <div style="font-size: 24px; margin-top: 10px; color: #fff">10年以上工作经验</div>
+                <div class="statistic-title">10年以上工作经验</div>
               </template>
               <template #suffix><b style="color: var(--maincolor)"> % </b></template>
             </el-statistic>
@@ -125,7 +116,7 @@ const newsList = ref(newsData.slice(0, 5))
     </el-row>
 
     <el-row :gutter="20" style="padding: 20px 0px; background-color: black" justify="center">
-      <el-col :span="8" class="service-container wow bounceInLeft">
+      <el-col :span="8" :xs="22" class="service-container wow bounceInLeft">
         <img
           src="@/assets/img/product_intro.png"
           style="
@@ -136,7 +127,7 @@ const newsList = ref(newsData.slice(0, 5))
           "
         />
       </el-col>
-      <el-col :span="8">
+      <el-col :span="8" :xs="22" class="service-content-container">
         <div class="service-content wow bounceInRight">
           <div>
             产品<b style="color: var(--maincolor)">&</b>&服务<br />
@@ -151,7 +142,7 @@ const newsList = ref(newsData.slice(0, 5))
     </el-row>
 
     <el-row :gutter="20" style="background-color: #171602">
-      <el-col :span="12" :offset="6">
+      <el-col :span="24">
         <div class="solution-container wow bounceInUp">
           解决<b>方案</b>
           <br />
@@ -178,11 +169,12 @@ const newsList = ref(newsData.slice(0, 5))
     </el-row>
 
     <el-row :gutter="20" style="padding: 20px 0px; background-color: black" justify="center">
-      <el-col :span="5" class="about-left-container">
-        <div class="about-left wow bounceInLeft"><b>新闻</b>资讯</div></el-col
+      <el-col :span="5" :xs="22" class="about-left-container">
+        <div class="about-left"><b>新闻</b>资讯</div></el-col
       >
-      <el-col :span="10">
-        <div class="news-right wow bounceInRight" v-for="(news, index) in newsList" :key="index">
+      <!-- wow bounceInRight -->
+      <el-col :span="10" :xs="22">
+        <div class="news-right" v-for="(news, index) in newsList" :key="index">
           <a :href="`/newsDetail?id=${news.id}`">{{ news.title }}</a>
           <ul>
             <p>{{ news.date }}</p>
@@ -195,7 +187,7 @@ const newsList = ref(newsData.slice(0, 5))
     </el-row>
 
     <el-row justify="center" style="background-color: #171602">
-      <el-col :span="12" style="text-align: center">
+      <el-col :span="12" :xs="22" style="text-align: center">
         <div class="scroll-title">
           合作伙伴<br />
           <p>Partner</p>
@@ -204,7 +196,7 @@ const newsList = ref(newsData.slice(0, 5))
     </el-row>
 
     <el-row style="padding: 10px 0px; background-color: #171602" justify="center">
-      <el-col :span="12">
+      <el-col :span="12" :xs="22">
         <div class="horizonta-scoll">
           <horizontal-scroll hover="true" :list="list" style="display: flex">
             <template v-slot="{ data }">
@@ -264,15 +256,28 @@ const newsList = ref(newsData.slice(0, 5))
 .about-bottom span i {
   border: 2px solid var(--maincolor);
   border-radius: 50%;
-  width: 0.5rem;
-  height: 0.5rem;
-  line-height: 0.5rem;
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
   display: inline-block;
-  font-size: 50px;
+  font-size: 32px;
   color: var(--maincolor);
 }
 .about-bottom span i:hover {
   animation: my-shake 0.5s;
+}
+.statistic-title {
+  font-size: 24px;
+  margin-top: 10px;
+  color: #fff;
+}
+.statistic-content {
+  font-size: 24px !important;
+  color: var(--maincolor);
+}
+:global(.el-statistic__number) {
+  font-size: 24px !important;
+  color: var(--maincolor);
 }
 
 .service-container {
@@ -381,5 +386,131 @@ const newsList = ref(newsData.slice(0, 5))
     font-size: 24px;
     margin: 0 0;
   }
+}
+
+@media screen and (max-width: 600px) {
+  :global(.el-row) {
+    margin-right: 0 !important;
+  }
+  .about-bottom {
+    padding: 0;
+    flex-wrap: wrap;
+    span {
+      width: 50%;
+      display: inline-block;
+      margin-left: 0;
+    }
+  }
+  .horizonta-scoll {
+    width: 100%;
+  }
+  .about-left {
+    font-size: 32px;
+    color: white;
+  }
+
+  .about-right {
+    font-size: 12px;
+  }
+  .about-bottom-container {
+    padding: 0px;
+  }
+  .about-bottom span i {
+    border: 2px solid var(--maincolor);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    display: inline-block;
+    font-size: 24px;
+    color: var(--maincolor);
+  }
+  .statistic-title {
+    font-size: 16px;
+    margin-top: 5px;
+    color: #fff;
+  }
+  .statistic-content {
+    font-size: 16px !important;
+    color: var(--maincolor);
+  }
+  :global(.el-statistic__number) {
+    font-size: 16px !important;
+    color: var(--maincolor);
+  }
+  .service-content-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .service-container {
+
+    height: 300px; /* 设置一个合适的高度 */
+  }
+
+  .solution-container {
+    p {
+      font-size: 14px;
+      color: #c8c4bb;
+    }
+    .solution-carousel {
+      width: 100vw; /* 缩小宽度 */
+      margin: 0 auto; /* 水平居中 */
+      border-radius: 10px; /* 添加圆角边框 */
+      overflow: hidden; /* 隐藏超出部分 */
+      :global(.el-carousel__container) {
+        height: 300px !important;
+        margin: 10px !important;
+      }
+
+      .el-carousel__item img {
+        width: 100%; /* 图片宽度自适应 */
+        height: 100%; /* 图片高度自适应 */
+        object-fit: cover; /* 保持图片比例并填充 */
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .news-right {
+    color: white;
+    a {
+      font-size: 16px;
+      text-decoration: none;
+      color: #fff;
+    }
+    a:hover {
+      color: var(--maincolor);
+    }
+    p{
+      font-size: 14px;
+    }
+    b{
+      font-size: 14px;
+    }
+
+  }
+  .news-more {
+    font-size: 14px;
+    display: block;
+    color: white;
+    text-align: right;
+    text-decoration: none;
+    &:hover {
+      color: var(--maincolor);
+    }
+  }
+  .horizonta-scoll{
+    height: 100px;
+  }
+  .friend-img-container {
+
+  .friend-img {
+    padding: 0px 20px;
+    width: 100px;
+    object-fit: cover;
+  }
+}
+
 }
 </style>

@@ -5,31 +5,31 @@
     <img src="@/assets/img/contactus.jpg" alt="联系我们" />
     <div class="overlay-text"><b style="color: var(--maincolor)">Contact us</b><br />联系我们</div>
   </div>
-  <el-row :gutter="50" justify="center">
-    <el-col :span="4"
+  <el-row :gutter="20" justify="center">
+    <el-col :span="4" :xs="7"
       ><div class="joinus-item">
-        <i class="iconfont icon-xueli"></i>
+        <i class="iconfont icon-dianhua"></i>
         <span>联系电话</span>
         <p>0562-302020</p>
       </div>
     </el-col>
-    <el-col :span="4"
+    <el-col :span="4" :xs="7"
       ><div class="joinus-item">
-        <i class="iconfont icon-xueli"></i>
+        <i class="iconfont icon-shangwuhezuo"></i>
         <span>商务合作</span>
         <p>xxxx@qq.com</p>
       </div>
     </el-col>
-    <el-col :span="4"
+    <el-col :span="4" :xs="7"
       ><div class="joinus-item">
-        <i class="iconfont icon-xueli"></i>
+        <i class="iconfont icon-toudijianli"></i>
         <span>投递简历</span>
         <p>qqqqq@qq.com</p>
       </div>
     </el-col>
   </el-row>
   <el-row>
-    <el-col :span="12" :offset="6"
+    <el-col :span="12" :xs="21" class="joinus-col-container"
       ><div class="joinus-map-container">
         <h1>苏州星韧科技有限公司</h1>
         <span>地址:上海市嘉定区同济大学国家大学科技园</span>
@@ -123,7 +123,7 @@ onMounted(() => {
   animation: fadeIn 2s ease-out forwards; /* 添加动画 */
 }
 .el-row {
-  margin: 20px 20px;
+  margin: 20px 0;
 }
 .el-row:last-child {
   margin-bottom: 0;
@@ -185,6 +185,9 @@ onMounted(() => {
   transform: translateY(-2px); /* 轻微上移 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
 }
+.joinus-col-container {
+  margin-left: 25%;
+}
 .joinus-map-container {
   display: flex;
   flex-direction: column;
@@ -204,6 +207,43 @@ onMounted(() => {
     #mapcontainer {
       width: 100%;
       height: 100%;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .header-img-container {
+    height: 180px;
+    .overlay-text {
+      font-size: 32px; /* 文字大小 */
+    }
+  }
+  .joinus-col-container {
+    margin:0
+  }
+  .el-row {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  .joinus-item {
+    min-height: 180px;
+    i {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 32px;
+    }
+    span {
+      margin-top: 20px;
+      font-size: 16px;
+      color: gray;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      width: 100px; /* 给定一个固定宽度 */
+      word-wrap: break-word; /* 允许在单词内换行 */
     }
   }
 }

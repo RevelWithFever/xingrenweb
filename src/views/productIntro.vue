@@ -29,7 +29,7 @@ watch(
       scrollToProduct(newId) // 滚动到对应的产品
     }
   },
-  { immediate: true },
+  { immediate: true }
 ) // immediate: true 确保在组件加载时立即执行
 
 // 定义响应式数据
@@ -69,7 +69,7 @@ const products = ref([
   <div class="product-banner">
     <div class="product-icon-and-breadcrumb">
       <i class="iconfont icon-didian"></i>
-      <el-breadcrumb :separator-icon="ArrowRight" style="font-size: 16px">
+      <el-breadcrumb :separator-icon="ArrowRight" class="product-breadcrumb">
         <el-breadcrumb-item class="product-banner-first" :to="{ path: '/' }"
           >首页</el-breadcrumb-item
         >
@@ -81,7 +81,7 @@ const products = ref([
       ellipsis
       class="el-menu-popper-demo"
       mode="horizontal"
-      style="width: 600px; --el-menu-hover-bg-color: white"
+      style="width: 60%; --el-menu-hover-bg-color: white"
       background-color="#fff"
       collapse-transition
       text-color="#000"
@@ -178,7 +178,7 @@ const products = ref([
 .product-banner {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   border-bottom: 2px solid rgba(128, 128, 128, 0.5);
   position: fixed; /* 固定位置 */
   top: 8vh; /* 距离顶部0 */
@@ -187,7 +187,9 @@ const products = ref([
   z-index: 999; /* 确保它在最上面 */
   background-color: #fff; /* 背景颜色 */
 }
-
+.product-breadcrumb {
+  font-size: 16px;
+}
 .el-menu--horizontal {
   --el-menu-horizontal-height: 6vh;
   border-bottom: none;
@@ -207,6 +209,10 @@ const products = ref([
 
 .product-icon-and-breadcrumb {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  padding-left: 10%;
 }
 .product-icon-and-breadcrumb i {
   width: 0.5vw;
@@ -263,5 +269,87 @@ const products = ref([
 }
 .item-form-param p {
   margin: 0.5vh 4vw 0px 0px; /* 在上下添加5像素的外边距 */
+}
+
+@media screen and (max-width: 600px) {
+  .product-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.5);
+    position: fixed; /* 固定位置 */
+    top: 8vh; /* 距离顶部0 */
+    left: 0; /* 距离左侧0 */
+    right: 0; /* 距离右侧0 */
+    z-index: 999; /* 确保它在最上面 */
+    background-color: #fff; /* 背景颜色 */
+  }
+  .el-menu--horizontal {
+    --el-menu-horizontal-height: 5vh;
+    border-bottom: none;
+  }
+
+  .el-menu-item {
+    font-size: 12px; /* 设置字体大小 */
+  }
+  .el-breadcrumb {
+    width: 180px;
+  }
+  .product-icon-and-breadcrumb i {
+    width: 8px;
+    height: 8px;
+    line-height: 8px;
+    display: inline-block;
+    font-size: 20px;
+    color: var(--maincolor);
+    margin-right: 20px;
+    padding: 0;
+  }
+  .product-breadcrumb {
+    font-size: 14px;
+  }
+
+  .product-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: black;
+  }
+  .product-item-card {
+    width: 50%;
+    padding: 10px; /* 移除默认的内边距 */
+    text-align: center; /* 文本靠左对齐 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .product-item-card img {
+    margin-left: 25%;
+    width: 50%;
+    object-fit: cover; /* 确保图片覆盖整个容器 */
+  }
+  .product-item-card .title {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .product-item-card li {
+    list-style-type: disc;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--greyword);
+  }
+  .product-item-card .subtitle {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .product-item-card .item-form-param {
+    display: flex;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    width: 100%;
+  }
+  .item-form-param p {
+    font-size: 10px;
+    width: 50%;
+    margin: 0;
+  }
 }
 </style>

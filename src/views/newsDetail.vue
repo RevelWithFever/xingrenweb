@@ -1,6 +1,6 @@
 <template>
   <el-row :gutter="20" style="border-bottom: 1px solid #bfbfbf">
-    <el-col :span="12" :offset="6">
+    <el-col :span="12" :xs="24" class="news-header-container">
       <div class="news-icon-and-breadcrumb">
         <i class="iconfont icon-didian"></i>
         <el-breadcrumb :separator-icon="ArrowRight" style="font-size: 16px">
@@ -17,12 +17,12 @@
   </el-row>
   <div class="news-container">
     <el-row :gutter="20">
-      <el-col :span="8" class="news-left-container">
+      <el-col :span="8" :xs="22" class="news-left-container">
         <div class="news-left-logo">
           <Vue3Lottie :animationData="LOGO_L_JSON" :height="500" :width="500" />
         </div>
       </el-col>
-      <el-col :span="8">
+      <el-col :span="8" :xs="24">
         <div class="news-detail">
           <div class="news-title">
             <FancyTitle>{{ newsItem.title }}</FancyTitle>
@@ -53,11 +53,11 @@
           </div>
         </div>
       </el-col>
-      <!-- <el-col :span="8">
-        <div class="news-left-logo">
-          <Vue3Lottie :animationData="LOGO_R_JSON" :height="300" :width="200" />
+      <el-col :span="8" :xs="24">
+        <div class="news-right-logo">
+          <Vue3Lottie :animationData="LOGO_R_JSON" :height="150" :width="150" />
         </div>
-      </el-col> -->
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -95,6 +95,9 @@ function isImage(src) {
 // .el-col {
 //   background-color: red;
 // }
+.news-header-container {
+  margin-left: 30%;
+}
 .news-icon-and-breadcrumb {
   display: flex;
   align-items: center; /* 垂直居中对齐 */
@@ -114,6 +117,9 @@ function isImage(src) {
   display: flex;
   align-items: center; // 垂直居中
   justify-content: center; // 水平居中
+}
+.news-right-logo {
+  display: none;
 }
 .news-detail {
   border: 1px #eee solid;
@@ -150,7 +156,8 @@ function isImage(src) {
     color: black;
     border: 2px solid var(--maincolor);
     border-radius: 10px;
-    padding: 1vh 0.5vw;
+    padding: 10px 5px;
+    margin: 5px 0;
   }
 }
 .news-next {
@@ -170,5 +177,48 @@ function isImage(src) {
   display: block;
   margin: 0 auto;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .news-header-container {
+    margin: 0;
+  }
+  .news-icon-and-breadcrumb {
+    height: 4vh; /* 设置固定高度 */
+  }
+  :global(.el-breadcrumb__item) {
+    font-size: 12px;
+  }
+  .news-icon-and-breadcrumb i {
+    width: 8px;
+    height: 8px;
+    line-height: 8px;
+    display: inline-block;
+    font-size: 20px;
+    color: var(--maincolor);
+    margin-right: 15px;
+  }
+  .news-detail {
+    margin: 5px;
+  }
+  .news-left-container {
+    display: none;
+  }
+  .news-right-logo {
+    display: block;
+  }
+
+  .news-title {
+    padding: 10px;
+    font-size: 16px; // 字体大小
+  }
+  .news-date {
+    font-size: 12px; // 字体大小
+  }
+
+  .news-next {
+    padding-top: 10px;
+    font-size: 12px; // 字体大小
+  }
 }
 </style>

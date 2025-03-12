@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { useDeviceStore } from '@/stores'
+// import { useDeviceStore } from '@/stores'
 const router = useRouter()
 const route = useRoute()
 
@@ -11,15 +11,18 @@ const defaultActive = computed(() => {
 const navigateToProduct = () => {
   router.push('/product')
 }
+const navigateToHome = () => {
+  router.push('/') // 跳转到首页
+}
 
-const deviceStore = useDeviceStore()
+// const deviceStore = useDeviceStore()
 </script>
 
 <template>
   <div class="header">
     <div class="header-list">
       <div class="header-top">
-        <img v-if="!deviceStore.isPhone" src="@/assets/img/logo_large.png" class="logo" />
+        <img  src="@/assets/img/logo_large.png" class="logo" @click="navigateToHome" />
         <el-menu
           :default-active="defaultActive"
           class="el-menu-nav"
@@ -81,9 +84,12 @@ const deviceStore = useDeviceStore()
   background-color: #fff;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   background-color: #171602;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header-top {
-  width: 60vw;
+  width: 80%;
   height: auto;
   margin: auto;
   display: flex;
@@ -92,16 +98,16 @@ const deviceStore = useDeviceStore()
 }
 .el-menu-nav {
   flex: 1;
-  margin-left: 50px;
 }
 
 .logo {
-  width: 8vw;
+  width: 200px;
 }
 
 .el-menu--horizontal {
   --el-menu-horizontal-height: 8vh;
   border-bottom: none;
+  justify-content: space-around;
 }
 .el-menu-item {
   font-size: 20px; /* 设置字体大小 */
@@ -117,4 +123,34 @@ const deviceStore = useDeviceStore()
 :global(.el-sub-menu div:hover) {
   color: #f3d19e !important;
 }
+
+@media screen and (max-width: 600px) {
+  .header{
+    width: 100vw;
+  }
+  .header-list{
+    width: 100vw;
+  }
+  .header-top{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo{
+    padding-left: 5%;
+    width: 20vw;
+  }
+  .el-menu-nav{
+    margin: 0;
+    width: 80vw;
+  }
+  :global(.el-sub-menu div) {
+  font-size: 12px;
+}
+.el-menu-item {
+  font-size: 12px; /* 设置字体大小 */
+}
+}
+
 </style>

@@ -12,6 +12,7 @@ li {
   list-style-type: none;
 }
 
+*{ margin:0; padding:0;}
 /* fade-slide */
 .fade-slide-leave-active,
 .fade-slide-enter-active {
@@ -27,6 +28,8 @@ li {
   transform: translateX(30px);
   opacity: 0;
 }
+
+
 
 @keyframes my-shake {
   0% {

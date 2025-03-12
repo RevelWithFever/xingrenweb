@@ -1,16 +1,23 @@
 {
-  "id": "",
-  "name": "",
+  "id": "4853105",
+  "name": "xingren-icon",
   "font_family": "iconfont",
   "css_prefix_text": "icon-",
   "description": "",
   "glyphs": [
     {
-      "icon_id": "2019043",
-      "name": "工作经验",
-      "font_class": "gongzuojingyan",
-      "unicode": "e79c",
-      "unicode_decimal": 59292
+      "icon_id": "883907",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "6147469",
+      "name": "商务合作",
+      "font_class": "shangwuhezuo",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
     },
     {
       "icon_id": "8039390",
@@ -32,6 +39,20 @@
       "font_class": "zijin",
       "unicode": "e88f",
       "unicode_decimal": 59535
+    },
+    {
+      "icon_id": "12388489",
+      "name": "投递简历",
+      "font_class": "toudijianli",
+      "unicode": "e6e1",
+      "unicode_decimal": 59105
+    },
+    {
+      "icon_id": "16857152",
+      "name": "工作经验",
+      "font_class": "gongzuojingyan",
+      "unicode": "e72b",
+      "unicode_decimal": 59179
     }
   ]
 }

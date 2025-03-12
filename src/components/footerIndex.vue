@@ -28,12 +28,6 @@ const currentYear = ref(new Date().getFullYear())
                 <a href="#">团队构成</a>
                 <a href="#">使命愿景</a>
               </li>
-              <li>
-                <p>关于我们</p>
-                <a href="#">公司介绍</a>
-                <a href="#">团队构成</a>
-                <a href="#">使命愿景</a>
-              </li>
             </ul>
           </div>
           <div class="footer-right-top-m">
@@ -52,7 +46,7 @@ const currentYear = ref(new Date().getFullYear())
           </div>
         </div>
         <div class="footer-right-bottom">
-          <p style="text-align: center; padding-top: 30px">
+          <p >
             &copy; {{ currentYear }} 星韧科技. All rights reserved.
           </p>
         </div>
@@ -61,7 +55,7 @@ const currentYear = ref(new Date().getFullYear())
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .footer-container {
   padding: 20px;
   background-color: #000;
@@ -163,4 +157,65 @@ const currentYear = ref(new Date().getFullYear())
   margin: 0; /* 移除默认的外边距 */
   color: var(--greyword); /* 设置文本颜色 */
 }
+
+.footer-right-bottom p{
+        font-size: 16px;
+        text-align: center;
+        padding-top: 30px;
+      }
+
+
+@media screen and (max-width: 600px) {
+  .footer-inner-list{
+    flex-wrap: wrap;
+    width: 100%;
+    .footer-right{
+      width: 100%;
+      .footer-right-top{
+        flex-wrap: wrap;
+        .footer-right-top-l {
+        width: 100%;
+        ul{
+          width:100%;
+          padding: 0 ;
+          margin: 0;
+          li{
+            width: 50%;
+            text-align: center;
+            p{
+              font-size: 14px;
+            }
+            a{
+              text-align: center;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .footer-right-top-r{
+        img{
+          width: 90px;
+        }
+        p{
+          font-size: 14px;
+        }
+      }
+      }
+
+    }
+
+  }
+  .footer-container{
+    padding: 0;
+  }
+  .footer-container img {
+  width: 120px; /* 使图片宽度适应容器 */
+  height: auto; /* 保持图片的宽高比 */
+}
+.footer-right-bottom p{
+        font-size: 14px;
+        text-align: center;
+      }
+}
+
 </style>

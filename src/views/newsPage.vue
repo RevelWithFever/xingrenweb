@@ -5,7 +5,7 @@
   </div>
 
   <el-row :gutter="20" style="border-bottom: 1px solid #bfbfbf">
-    <el-col :span="12" :offset="6">
+    <el-col :span="12" :xs="22">
       <div class="news-icon-and-breadcrumb">
         <i class="iconfont icon-didian"></i>
         <el-breadcrumb :separator-icon="ArrowRight" style="font-size: 16px">
@@ -18,7 +18,7 @@
     </el-col>
   </el-row>
   <el-row :gutter="20">
-    <el-col :span="12" :offset="6">
+    <el-col :span="24" class="news-col-container">
       <div class="news-container">
         <div class="news-item" v-for="(news, index) in paginatedData" :key="index">
           <ul>
@@ -100,6 +100,7 @@ const handlePageChange = (page) => {
   display: flex;
   align-items: center; /* 垂直居中对齐 */
   height: 5vh; /* 设置固定高度 */
+  margin-left: 55%;
 }
 .news-icon-and-breadcrumb i {
   width: 10px;
@@ -110,7 +111,11 @@ const handlePageChange = (page) => {
   color: var(--maincolor);
   margin-right: 30px;
 }
-
+.news-col-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .news-container {
   padding: 20px;
 }
@@ -122,6 +127,8 @@ const handlePageChange = (page) => {
 
   ul li {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .news-l-img {
     width: 35%;
@@ -196,5 +203,57 @@ const handlePageChange = (page) => {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 600px) {
+  .header-img-container {
+    height: 180px;
+    .overlay-text {
+      font-size: 32px; /* 文字大小 */
+    }
+  }
+  .news-icon-and-breadcrumb {
+    align-items: center; /* 垂直居中对齐 */
+    margin: 0;
+  }
+
+  .news-container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .news-item {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #eee;
+    ul{
+      margin: 5px;
+      padding: 0;
+      li{
+        height: 150px;
+      }
+    }
+    .news-l-img {
+      height: 100%;
+      width: 50%;
+    }
+
+    .news-r-list {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      a {
+        font-size: 15px;
+      }
+
+      .news-subtitle {
+        font-size: 14px;
+        width: 100%;
+        overflow: hidden;
+        white-space: wrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
 }
 </style>

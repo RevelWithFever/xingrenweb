@@ -41,7 +41,7 @@ onMounted(() => {
   <div class="aboutus-banner">
     <div class="aboutus-icon-and-breadcrumb">
       <i class="iconfont icon-didian"></i>
-      <el-breadcrumb :separator-icon="ArrowRight" style="font-size: 16px">
+      <el-breadcrumb :separator-icon="ArrowRight">
         <el-breadcrumb-item class="aboutus-banner-first" :to="{ path: '/' }"
           >首页</el-breadcrumb-item
         >
@@ -53,7 +53,7 @@ onMounted(() => {
       ellipsis
       class="el-menu-popper-demo"
       mode="horizontal"
-      style="width: 600px"
+      style="width: 50%"
       background-color="#fff"
       collapse-transition
       text-color="#000"
@@ -93,7 +93,7 @@ onMounted(() => {
       </div>
     </div>
     <div class="image-item">
-      <img src="@/assets/img/aboutus3.jpg" style="width: 800px; height: 770px" alt="愿景" />
+      <img src="@/assets/img/aboutus3.jpg" class="img-right" alt="愿景" />
       <div class="text-overlay">
         <h2 style="color: var(--maincolor)">愿景</h2>
         <p>成为线控底盘关键技术领跑者</p>
@@ -149,16 +149,23 @@ onMounted(() => {
     background-color: #fff !important;
   }
   .aboutus-icon-and-breadcrumb {
+    width: 50%;
+    text-align: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .el-breadcrumb {
+    width: 120px;
   }
   .aboutus-icon-and-breadcrumb i {
-    width: 10px;
-    height: 10px;
-    line-height: 10px;
+    width: 10%;
+    height: 8px;
+    line-height: 8px;
     display: inline-block;
-    font-size: 30px;
+    font-size: 24px;
     color: var(--maincolor);
-    margin-right: 30px;
+    margin-right: 10px;
   }
 }
 
@@ -181,6 +188,10 @@ onMounted(() => {
     text-align: center; /* 文字居中对齐 */
     width: 1400px; /* 限制最大宽度，防止文字过长 */
     text-align: left;
+    padding: 10px;
+    border: 1px solid var(--maincolor);
+    border-radius: 10px;
+    text-indent: 2em;
   }
 }
 
@@ -194,6 +205,7 @@ onMounted(() => {
     overflow: hidden;
     border-radius: 10%;
     padding: 10px;
+
     img {
       height: 380px;
       width: 570px;
@@ -201,6 +213,10 @@ onMounted(() => {
       object-fit: cover; /* 确保图片覆盖整个容器，但不变形 */
       border-radius: 10%;
       transition: all 0.5s;
+    }
+    .img-right {
+      width: 800px;
+      height: 770px;
     }
     .text-overlay {
       position: absolute;
@@ -235,6 +251,142 @@ onMounted(() => {
   .image-item:hover img {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header-img-container {
+    width: 100%;
+    overflow: hidden;
+    height: 180px;
+    position: relative;
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 32px;
+      text-shadow: 2px 2px 4px rgba(1, 1, 1, 0.5);
+      font-family: 'AlimamaDaoLiTi';
+      animation: fadeIn 2s ease-out forwards;
+    }
+  }
+  .aboutus-banner {
+    .el-menu--horizontal {
+      --el-menu-horizontal-height: 20px;
+      border-bottom: none;
+    }
+
+    .el-menu-item {
+      font-size: 12px; /* 设置字体大小 */
+    }
+  }
+
+  .el-breadcrumb {
+    width: 120px;
+  }
+  .aboutus-icon-and-breadcrumb{
+    height: 4vh;
+  }
+  .aboutus-icon-and-breadcrumb i {
+    width: 8px;
+    height: 8px;
+    line-height: 8px;
+    display: inline-block;
+    font-size: 20px;
+    color: var(--maincolor);
+    margin-right: 10px;
+  }
+
+  .aboutus-intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平居中 */
+    .aboutus-title {
+      font-size: 32px; /* 标题字体大小 */
+      font-weight: bold; /* 加粗标题 */
+      margin-bottom: 10px; /* 标题与内容之间的间距 */
+      text-align: center;
+      width: 90%;
+    }
+
+    .aboutus-content {
+      font-size: 20px; /* 内容字体大小 */
+      color: #666;
+      text-align: center; /* 文字居中对齐 */
+      width: 90%;
+      text-align: left;
+      padding: 10px;
+      border: 1px solid var(--maincolor);
+      border-radius: 10px;
+      text-indent: 2em;
+    }
+  }
+
+  /* 定义动画 */
+
+  .image-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    flex-wrap: wrap;
+    .image-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      justify-content: center; /* 水平居中 */
+      img {
+        height: 380px;
+        width: 98%;
+        display: block;
+        object-fit: cover; /* 确保图片覆盖整个容器，但不变形 */
+        border-radius: 10px;
+        transition: all 0.5s;
+      }
+      .img-right {
+        height: 380px;
+        width: 98%;
+        display: block;
+        object-fit: cover; /* 确保图片覆盖整个容器，但不变形 */
+        border-radius: 10px;
+        transition: all 0.5s;
+      }
+      .text-overlay {
+        position: absolute;
+        border-radius: 10px;
+        bottom: 40%;
+        left: 25%;
+        right: 25%;
+        background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+        text-align: left;
+      }
+      .text-overlay::before {
+        content: '';
+        height: 4px;
+        background: var(--maincolor);
+        /* 伪元素默认样式 display: inline;所以需要转成inline-block宽高才会生效 */
+        display: inline-block;
+        /* 通过定位使下划线在最低层 */
+        position: absolute;
+        bottom: -3px;
+        width: 0;
+        /* 加上一个过渡效果，使之丝滑一些 */
+        transition: width 0.36s;
+      }
+      .text-overlay:hover::before {
+        /* 悬浮时候，让下划线伪元素宽度变成100%即可出现效果 */
+        width: 96%;
+      }
+    }
+    .image-item:hover img {
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+      transform: scale(1.1);
+    }
   }
 }
 </style>
